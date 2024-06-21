@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <input placeholder="Search here" id="searchWidgetTrigger" />
+      <input placeholder="Annual Reports Search Demo" id="searchWidgetTrigger" />
     </div>
   );
 }
