@@ -1,5 +1,5 @@
 # build environment
-FROM node:8-alpine as react-build
+FROM node:14-alpine as react-build
 WORKDIR /app
 COPY . ./
 RUN npm install
@@ -14,3 +14,4 @@ RUN sh -c "envsubst '\$PORT'  < /etc/nginx/conf.d/configfile.template > /etc/ngi
 COPY --from=react-build /app/build /usr/share/nginx/html
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
+
