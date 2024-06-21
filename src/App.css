@@ -1,38 +1,44 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+#searchWidgetTrigger {
+  width: 25vw; /* Dynamic width */
+  max-width: 450px; /* Maximum width */
+  padding: 1.5vw; /* Dynamic padding */
+  font-size: 1.5vw; /* Dynamic font size */
+  border: 2px solid #fff;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 5%; /* Adjust to position from the bottom */
+  right: 15%; /* Adjust to position more to the left */
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#searchWidgetTrigger::placeholder {
+  color: #fff;
+}
+
+.gen-search-widget {
+  display: none;
 }
