@@ -10,7 +10,7 @@ function App() {
     script.onload = () => {
       // Initialize the widget once the script is loaded
       const genSearchWidget = document.createElement('gen-search-widget');
-      genSearchWidget.setAttribute('configId', '91c5f2c9-3161-4ec3-8f95-f0cbf69f9c08');
+      genSearchWidget.setAttribute('configId', '91c5f2c9-3161-4ec3-8f95-f0cbf69f9c08');g
       genSearchWidget.setAttribute('triggerId', 'searchWidgetTrigger');
       document.body.appendChild(genSearchWidget);
     };
