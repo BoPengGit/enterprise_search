@@ -20,15 +20,15 @@ body, html {
 }
 
 #searchWidgetTrigger {
-  width: 25vw; /* Dynamic width */
-  max-width: 450px; /* Maximum width */
-  padding: 1.5vw; /* Dynamic padding */
+  width: 35vw; /* Increased dynamic width */
+  max-width: 600px; /* Increased maximum width */
+  padding: 2vw; /* Increased dynamic padding */
   font-size: 1.5vw; /* Dynamic font size */
   border: 2px solid #fff;
   border-radius: 30px;
   position: absolute;
   bottom: 5%; /* Adjust to position from the bottom */
-  right: 15%; /* Adjust to position more to the left */
+  right: 10%; /* Adjust to position more to the left */
   background-color: transparent;
   color: #fff;
   text-align: center;
