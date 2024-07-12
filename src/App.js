@@ -1,34 +1,54 @@
 import React, { useEffect } from 'react';
 import './App.css';
 
-function App() {
+const DialogflowMessenger = () => {
   useEffect(() => {
-    // Load the external script
     const script = document.createElement('script');
-    script.src = "https://cloud.google.com/ai/gen-app-builder/client?hl=en_US";
+    script.src = 'https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js';
     script.async = true;
-    script.onload = () => {
-      // Initialize the widget once the script is loaded
-      const genSearchWidget = document.createElement('gen-search-widget');
-      genSearchWidget.setAttribute('configId', '187c75f0-2ad9-4ac0-ac63-ce8f48af32c9');
-      genSearchWidget.setAttribute('triggerId', 'searchWidgetTrigger');
-      document.body.appendChild(genSearchWidget);
-    };
     document.body.appendChild(script);
 
     return () => {
-      // Clean up the script when the component unmounts
       document.body.removeChild(script);
-      const widget = document.querySelector('gen-search-widget');
-      if (widget) {
-        document.body.removeChild(widget);
-      }
     };
   }, []);
 
   return (
+    <div>
+      <link
+        rel="stylesheet"
+        href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
+      />
+      <df-messenger
+        location="us"
+        project-id="nerdery-technology-gen-ai"
+        agent-id="4fefaeaa-2695-4bd1-b077-81e9da46b5be"
+        language-code="en"
+        max-query-length="-1"
+      >
+        <df-messenger-chat-bubble chat-title="Annual Reports Agent"></df-messenger-chat-bubble>
+      </df-messenger>
+      <style>
+        {`
+          df-messenger {
+            z-index: 999;
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+function App() {
+  return (
     <div className="App">
-      <input placeholder="Annual Reports Search Demo" id="searchWidgetTrigger" />
+      <header className="App-header">
+        {/* Other components */}
+        <DialogflowMessenger />
+      </header>
     </div>
   );
 }
